@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block title %}
+{{categories}}
+{% endblock title %}
+{% block categoryProduct %}
+<section class="bg-white py-20 lg:py-[20px] flex flex-col">
+  {% for subcategory,product in product.items %}
+  <div class="container mx-auto mb-5">
+    <div class="productSection flex flex-col">
+      <div class="mb-11 flex w-full rounded-lg border-l-[6px] border-[#34D399] bg-[#34D399] bg-opacity-[15%] px-7 py-2 shadow-md md:p-5">
+        <div class="w-full">
+          <h5 class="text-lg font-semibold text-dark">
+            {{subcategory}}
+          </h5>
+        </div>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-3">
+      {% for prod in product %}
+      <div class="flex flex-col">
+        <img class="object-contain h-[25rem]" src={{prod.prod_img_1.url}} alt="">
+        <div class="flex flex-col px-12 py-5">
+          <h2 class="text-lg font-semibold text-dark">{{prod.productName}}</h2>
+          <h5>{{prod.productDescription|slice:40}}...</h5>
+          <span class="text-[#4ba559]">₹{{prod.productPrice}}</span>
+          <a class="btn btn-outline btn-primary my-3" href="{% url 'productPage' prod.pk %}">Explore</a>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+  {% endfor %}
+  </section>
+  
+{% endblock categoryProduct %}

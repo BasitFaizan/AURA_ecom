@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% load static %} 
+{% block title %}Sell{% endblock title %}
+{% block sell %}
+<!-- component -->
+<div class="relative min-h-screen flex items-center justify-center bg-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 bg-gray-500 bg-no-repeat bg-cover relative items-center"
+	style="background-image: url(https://images.unsplash.com/photo-1532423622396-10a3f979251a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1500&q=80);">
+	<div class="absolute bg-black opacity-60 inset-0 z-0"></div>
+	<div class="w-full h-[130vh] space-y-3 p-10 bg-white rounded-xl shadow-lg z-10">
+		<form class="p-5" action="#" enctype="multipart/form-data"  method="post">
+      {% csrf_token %}
+            <div class="space-y-12">
+              <div class="border-b border-gray-900/10 pb-7">
+                <h2 class="text-base font-semibold leading-7 text-gray-900">Product Information</h2>
+              </div>
+                  <div class="col-span-full">
+                    <label for="photo" class="block text-sm font-medium leading-6 text-gray-900">Photo</label>
+                    <div class="mt-2 flex items-center gap-x-3" data-image="image1">
+                      <img src="/media/media/productImage/default-product-image.png" class="imageUPloaerImage w-12 h-12 rounded-full" alt="" data-image="image1">
+                      <input value="Change" type="file" name="prod_img_1" class="imageUploader rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    </div>
+                    <div class="mt-2 flex items-center gap-x-3" data-image="image1">
+                      <img src="/media/media/productImage/default-product-image.png" class="imageUPloaerImage w-12 h-12 rounded-full" alt="" data-image="image1">
+                      <input value="Change" type="file" name="prod_img_2" class="imageUploader rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    </div>
+                    <div class="mt-2 flex items-center gap-x-3" data-image="image1">
+                      <img src="/media/media/productImage/default-product-image.png" class="imageUPloaerImage w-12 h-12 rounded-full" alt="" data-image="image1">
+                      <input value="Change" type="file" name="prod_img_3" class="imageUploader rounded-md bg-white px-2.5 py-1.5 text-sm font-semibold text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 hover:bg-gray-50">
+                    </div>
+          
+                  
+                </div>
+              
+          
+              <div class="">
+
+          
+                <div class="mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
+                  <div class="sm:col-span-3">
+                    <label for="first-name" class="block text-sm font-medium leading-6 text-gray-900">Product Name</label>
+                    <div class="mt-2">
+                      <input type="text" name="productName" id="first-name" autocomplete="given-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                  </div>
+          
+                  <div class="sm:col-span-3">
+                    <label for="last-name" class="block text-sm font-medium leading-6 text-gray-900">Product Price</label>
+                    <div class="mt-2">
+                      <input type="number" name="productPrice" id="last-name" autocomplete="family-name" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                  </div>
+                  
+                  <div class="sm:col-span-3">
+                    <label for="countries" class="block text-sm font-medium leading-6 text-gray-900">Category</label>
+                    <div class="mt-2">
+                      <select id="countries" name="categoryName" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected>Choose a category</option>
+                      {% for categ in categ %}
+                      <option value="{{categ.categoryName}}">{{categ.categoryName}}</option>
+                      {% endfor %}
+                    </select>
+                    </div>
+                  </div>
+                  <div class="sm:col-span-3">
+                    <label for="number" class="block text-sm font-medium leading-6 text-gray-900">Sub Category</label>
+                    <div class="mt-2">
+                      <input id="number" name="subCategory" type="text" autocomplete="number" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6">
+                    </div>
+                  </div>
+                  <div class="sm:col-span-6">
+                    <label for="email" class="block text-sm font-medium leading-6 text-gray-900">Product Description</label>
+                    <div class="mt-2">
+                      <textarea id="email" name="productDescription" class="block w-full rounded-md border-0 p-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"></textarea>
+                    </div>
+                  </div>
+            </div>
+          
+            <div class="mt-6 flex items-center justify-end gap-x-6">
+              <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sell</button>
+            </div>
+          </form>
+	</div>
+  {% comment %} <script src="static/js/imageUploader.js"></script> {% endcomment %}
+  <script src="{% static '/js/imageUploader.js' %}"></script>
+{% endblock sell %}

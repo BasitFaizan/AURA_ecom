@@ -1,0 +1,141 @@
+{% extends 'base.html' %}
+{% block title %}
+Buy
+{% endblock title %}
+{% block buynow %}
+<div class="flex">
+<div class="container m-auto flex flex-col items-center w-[70vw]">
+    <div class="w-[65vw] h-[4rem] bg-green-400 flex flex-col my-4 p-2 px-5 rounded-[15px] text-[#fff]">
+        <div class="_1aULyb flex items-center">LOGIN<svg height="20" width="32" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="_1t8m48"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4L9 16.2z" stroke="#2974f0"></path></svg></div>
+        <span class="font-bold">{{user}}</span>
+    </div>
+<div class="collapse bg-green-400 w-[65vw]">
+    <input type="checkbox" /> 
+    <div class="collapse-title text-xl font-medium text-[#fff]">
+      DELIVERY ADDRESS
+    </div>
+    <div class="collapse-content bg-[#fff]">
+          <div class="form-control p-6">
+            <label class="flex cursor-pointer">
+                <input type="radio" name="radio-10" class="radio checked:bg-blue-500" checked />
+                <div class="flex flex-col w-[65vw] h-[70vh] px-12">
+                    <h2 class="font-bold text-blue">ADD A NEW ADDRESS</h2>
+                    <form class="w-[55vw]">
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                           Name
+                          </label>
+                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" name='userName'>
+                        </div>
+                        <div class="w-full md:w-1/2 px-3">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                            Phone number
+                          </label>
+                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="number" placeholder="91xxxxxxxx" name="phoneNumber">
+                        </div>
+                      </div>
+                      <div class="flex flex-wrap -mx-3 mb-6">
+                        <div class="w-full px-3">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                            address
+                          </label>
+                          <textarea class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-password" type="password" placeholder="Enter your full address" rows="5" name="address"></textarea>
+                        </div>
+                      </div>
+                      <div class="flex flex-wrap -mx-3 mb-2">
+                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-city">
+                            Alternate number
+                          </label>
+                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-city" type="number" placeholder="91xxxxxxxx" name="alternateNumber">
+                        </div>
+                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-state">
+                            State
+                          </label>
+                          <div class="relative">
+                            <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state">
+                              <option value="" >--Select State--</option><option value="Andaman &amp; Nicobar Islands">Andaman &amp; Nicobar Islands</option><option value="Andhra Pradesh">Andhra Pradesh</option><option value="Arunachal Pradesh">Arunachal Pradesh</option><option value="Assam">Assam</option><option value="Bihar">Bihar</option><option value="Chandigarh">Chandigarh</option><option value="Chhattisgarh">Chhattisgarh</option><option value="Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu">Dadra &amp; Nagar Haveli &amp; Daman &amp; Diu</option><option value="Delhi">Delhi</option><option value="Goa">Goa</option><option value="Gujarat">Gujarat</option><option value="Haryana">Haryana</option><option value="Himachal Pradesh">Himachal Pradesh</option><option value="Jammu &amp; Kashmir">Jammu &amp; Kashmir</option><option value="Jharkhand">Jharkhand</option><option value="Karnataka">Karnataka</option><option value="Kerala">Kerala</option><option value="Ladakh">Ladakh</option><option value="Lakshadweep">Lakshadweep</option><option value="Madhya Pradesh">Madhya Pradesh</option><option value="Maharashtra">Maharashtra</option><option value="Manipur">Manipur</option><option value="Meghalaya">Meghalaya</option><option value="Mizoram">Mizoram</option><option value="Nagaland">Nagaland</option><option value="Odisha">Odisha</option><option value="Puducherry">Puducherry</option><option value="Punjab">Punjab</option><option value="Rajasthan">Rajasthan</option><option value="Sikkim">Sikkim</option><option value="Tamil Nadu">Tamil Nadu</option><option value="Telangana">Telangana</option><option value="Tripura">Tripura</option><option value="Uttarakhand">Uttarakhand</option><option value="Uttar Pradesh">Uttar Pradesh</option><option value="West Bengal">West Bengal</option>
+                            </select>
+                            <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                              <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                          <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-zip">
+                            Zip
+                          </label>
+                          <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-zip" type="text" placeholder="90210">
+                        </div>
+                      </div>
+                      <div class="mt-6 flex items-center justify-end gap-x-6">
+                        <button type="button" class="text-sm font-semibold leading-6 text-gray-900">Cancel</button>
+                        <button type="submit" class="rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Save</button>
+                      </div>
+                    </form>
+                </div>
+            </label>
+            <label class="flex cursor-pointer">
+              {% if not request.userAddress %}
+              {% for userAddress in userAddress %}
+              <input type="radio" name="radio-10" class="radio checked:bg-blue-500" />
+              <div class="flex flex-col w-[65vw] h-[10vh] px-12">
+                <div class="flex flex-col">
+                  <div class="flex">
+                    <h2 class="font-bold mr-2">{{userAddress.userName}}</h2>
+                    <h2 class="font-bold mx-2">{{userAddress.phoneNumber}}</h2>
+                  </div>
+                  <div class="flex">
+                    <p>{{userAddress.address}}-<span class="font-bold">{{userAddress.pincode}}</span></p>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              {% endif %}
+            </label>
+          </div>
+    </div>
+  </div>
+<div class="collapse bg-green-400 mt-4 w-[65vw]">
+    <input type="checkbox"checked /> 
+    <div class="collapse-title text-xl font-medium text-[#fff]">
+      ORDER SUMMARY
+    </div>
+    <div class="collapse-content bg-white">
+    <div class="form-control p-6 flex flex-row">
+      <div class="grid place-items-center w-[10vw]">
+        <img src={{productDetails.prod_img_1.url}} class="w-[9vw]" alt="">
+      </div>
+      <div class="flex ml-5 flex-col">
+        <h3 class="font-bold">{{productDetails.productName}}</h3>
+        <span class="">Size: 32</span>
+        <span class="font-bold mt-5">₹{{productDetails.productPrice}}</span>
+        
+      </div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="flex flex-col items-center w-[27vw] mr-5 h-[40vh] bg-[#f1f3f6]">
+  <div class="w-[24vw] h-[5rem] mt-1">
+    <div class="w-full h-[4rem] flex items-center text-gray-400 border-b-[1px] border-[#e8e8e8]  font-bold">PRICE DETAILS</div>
+  </div>
+  <div class="flex flex-col justify-between w-[24vw] h-[7rem] border-b-[2px] border-[#e8e8e8] pb-5">
+    <div class="flex items-center justify-between">
+      <span>Price</span>
+      <span>₹{{productDetails.productPrice}}</span>
+    </div>
+    <div class="flex items-center justify-between">
+      <span>Delivery Charges</span>
+      <span class="text-green-500">Free</span>
+    </div>
+  </div>
+  <div class="flex w-[24vw] h-[3rem] flex items-center justify-between border-b-[2px] border-[#e8e8e8] mt-2">
+    <h1 class="font-bold font-[20px]">Total Payable</h1>
+    <span class="font-bold font-[20px]">₹{{productDetails.productPrice}}</span>
+  </div>
+</div>
+</div>
+{% endblock buynow %}

@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./media/paytm",
+        "./category/paytm"
+    ]
+}

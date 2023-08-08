@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block title %}{{productDetails.productName}}{% endblock title %}
+{% block productPage %}
+<section>
+    <div class="grid place-items-center">
+        <div class="w-[97vw] h-[97vh] flex">
+            <div class="flex">
+                <ul class="flex flex-col w-[7vw]">
+                    <li><img class="productSmallImage cursor-pointer w-[7vw] active " src={{productDetails.prod_img_1.url}} alt=""></li>
+                    <li><img class="productSmallImage cursor-pointer w-[7vw] " src={{productDetails.prod_img_2.url}} alt=""></li>
+                    <li><img class="productSmallImage cursor-pointer w-[7vw] " src={{productDetails.prod_img_3.url}} alt=""></li>
+                </ul>
+                <div class="flex flex-col w-[30vw] items-center">
+                    <img class="productBigImage w-[25vw] mix-blend-multiply" src={{productDetails.prod_img_1.url}} alt="">
+                    <div class="flex w-[30vw] mt-5 h-[10rem] justify-around py-5">
+                        <a href="{% url 'buy' productDetails.pk %}" class="productDetailBtn order_btn">Buy now</a>
+                        <a href="#" class="productDetailBtn cart_btn">Add to cart</a>
+                    </div>
+                </div>
+                <div class="flex w-[60vw] flex-col p-6">
+                    <h2 class="text-[1.2rem] font-bold">{{productDetails.productName}}</h2>
+                    <span class="text-[#67de80]">₹{{productDetails.productPrice}}</span>
+                    <h2 class="text-[1.2rem] font-bold">Available offers</h2>
+                    <div class="XUp0WS flex flex-col">
+                        <span class="_3j4Zjq flex mt-5">
+                            <img src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" width="18" height="18" class="_3HLfAg">
+                            <li class="_16eBzU col list-none text-[13px]">
+                                <span class="u8dYXW font-bold">Bank Offer</span><span> Flat ₹1,000 off on HDFC Bank Credit Card EMI Trxns on orders priced between ₹15,000 to ₹49,999</span><span class="text-[#488af2] font-bold">T&amp;C</span>
+                            </li>
+                        </span>
+                        <span class="_3j4Zjq flex mt-5">
+                            <img src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" width="18" height="18" class="_3HLfAg">
+                            <li class="_16eBzU col list-none text-[13px]">
+                                <span class="u8dYXW font-bold">Bank Offer</span><span> Flat ₹3,000 off on HDFC Bank Credit Card EMI Trxns on orders priced ₹50,000 and above</span><span class="text-[#488af2] font-bold">T&amp;C</span>
+                            </li>
+                        </span>
+                        <span class="_3j4Zjq flex mt-5">
+                            <img src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" width="18" height="18" class="_3HLfAg">
+                            <li class="_16eBzU col list-none text-[13px]">
+                                <span class="u8dYXW font-bold">Bank Offer</span><span> Flat ₹100 Instant Cashback on Paytm Wallet. Min Order Value ₹1000. Valid once per Paytm account</span><span class="text-[#488af2] font-bold">T&amp;C</span>
+                            </li>
+                        </span>
+                        <span class="_3j4Zjq flex mt-5">
+                            <img src="https://rukminim2.flixcart.com/www/36/36/promos/06/09/2016/c22c9fc4-0555-4460-8401-bf5c28d7ba29.png?q=90" width="18" height="18" class="_3HLfAg">
+                            <li class="_16eBzU col list-none text-[13px]">
+                                <span>Additional 10% off Up to 500 on next purchase of Electronics, Mobiles & Large Appliances</span><span class="text-[#488af2] font-bold">T&amp;C</span>
+                            </li>
+                        </span>
+                    </div>
+                    <div class="w-[8rem] py-3 grid place-items-center my-5 rounded-[4px] border border-indigo-200">{{productDetails.subCategory}}</div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+    let productSmallImage = document.querySelectorAll('.productSmallImage')
+    let productBigImage = document.querySelector('.productBigImage')
+    productSmallImage.forEach((element)=>{
+        element.addEventListener('click',(element2)=>{
+            productSmallImage.forEach((index)=>{
+                index.classList.remove('active')
+            })
+            element2.target.classList.add('active')
+            productBigImage.src=element.src
+        })
+    })
+</script>
+{% endblock productPage %}
